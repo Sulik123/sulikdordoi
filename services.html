@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Услуги Ассоциации Дордой">
+    <title>Услуги - Ассоциация Дордой</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f9fc;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 20px 0;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+        }
+
+        #logo {
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        .services-header {
+            background: url('services-banner.jpg') no-repeat center center/cover;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .services-header h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        .services-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 40px;
+            gap: 20px;
+        }
+
+        .service-item {
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 40px);
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-item h3 {
+            font-size: 24px;
+            color: #003366;
+            margin-bottom: 10px;
+        }
+
+        .service-item p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        footer ul li {
+            margin-left: 20px;
+        }
+
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="#" id="logo">Ассоциация Дордой</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="services-header">
+        <h1>Наши Услуги</h1>
+    </section>
+
+    <section class="services-list">
+        <div class="service-item">
+            <h3>Охранные и детективные услуги</h3>
+            <p>Физическая охрана, тревожная кнопка, сопровождение грузов и многое другое от агентства «Дордой-Секьюрити».</p>
+        </div>
+        <div class="service-item">
+            <h3>Юридические услуги</h3>
+            <p>Компания «Status Quo» предлагает абонентское обслуживание для защиты вашего бизнеса.</p>
+        </div>
+        <div class="service-item">
+            <h3>Образовательные услуги</h3>
+            <p>Центр «Умай-Нур» предлагает обучение с детского сада, развивая личностный и интеллектуальный потенциал.</p>
+        </div>
+        <div class="service-item">
+            <h3>Туризм и отдых</h3>
+            <p>Центр отдыха «Кой-Таш» приглашает насладиться живописными пейзажами Аламединского ущелья.</p>
+        </div>
+        <div class="service-item">
+            <h3>Логистические услуги</h3>
+            <p>Доставка товаров в СНГ и Россию с полным оформлением документов и оптимизацией транспорта.</p>
+        </div>
+        <div class="service-item">
+            <h3>Финансовые и цифровые услуги</h3>
+            <p>Цифровая платформа в партнерстве с Visa обеспечивает современные способы оплаты и финансовые услуги.</p>
+        </div>
+        <div class="service-item">
+            <h3>Спортивные и культурные мероприятия</h3>
+            <p>Организация чемпионатов и фестивалей для популяризации спорта и культуры в регионе.</p>
+        </div>
+        <div class="service-item">
+            <h3>Производственные услуги</h3>
+            <p>Поддержка мебельного производства и создание рабочих мест в регионе.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Ассоциация Дордой. Все права защищены.</p>
+        <ul>
+            <li><a href="#">Политика конфиденциальности</a></li>
+            <li><a href="#">Условия использования</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

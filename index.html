@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ассоциация Дордой - главная страница">
+    <title>Ассоциация Дордой</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    margin-left: 200px; /* Сдвигает логотип влево */
+}
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 20px 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff6600;
+            transform: scale(1.1);
+        }
+
+        .hero {
+            background: url('img/img4.webp') center/cover no-repeat;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            animation: slideIn 1.5s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin: 0;
+            animation: fadeIn 2s ease-in-out;
+            font-size: 48px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin: 10px 0 0;
+            animation: fadeIn 2s ease-in-out;
+            text-shadow: 1px 1px 2px rgb(255, 255, 255);
+        }
+
+        .hero .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .hero .btn:hover {
+            background-color: #e65c00;
+            transform: scale(1.1);
+        }
+
+        .section {
+            padding: 40px 20px;
+            text-align: center;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        .section h2 {
+            font-size: 32px;
+            color: #003366;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .news {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        .news-item {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            padding: 20px;
+            transition: transform 0.3s;
+        }
+
+        .news-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .news-item img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .news-item h3 {
+            font-size: 20px;
+            color: #003366;
+            margin-top: 10px;
+        }
+
+        .news-item p {
+            font-size: 16px;
+            color: #666;
+            margin: 10px 0;
+        }
+
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 20px 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        footer ul li {
+            margin-left: 20px;
+        }
+
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer ul li a:hover {
+            color: #ff6600;
+        }
+        nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    margin-right: 110px;  /* Это сдвигает все элементы навигации вправо */
+}
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="#" id="logo">Ассоциация Дордой</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div>
+            <h1>Добро пожаловать в Ассоциацию Дордой</h1>
+            <p>Мы объединяем людей и идеи для совместного развития</p>
+            
+        </div>
+    </div>
+
+    <div class="section" id="about">
+        <h2>О нас</h2>
+        <p>Ассоциация "Дордой" была создана с целью поддержки бизнеса, объединения усилий предпринимателей и развития экономики. Мы предлагаем широкий спектр услуг, включая юридическую поддержку, консультации по бизнес-стратегиям и организацию мероприятий для членов нашей ассоциации. Наши усилия направлены на создание сильной и устойчивой деловой среды.</p>
+    </div>
+
+    <div class="section" id="news">
+        <h2>Новости</h2>
+        <div class="news">
+            <div class="news-item">
+                <img src="img/img1.webp" alt="News 1">
+                <h3>Новый проект в области образования</h3>
+                <p>Мы запускаем новый образовательный проект, который поможет развивать предпринимательские навыки в нашей общине.</p>
+            </div>
+            <div class="news-item">
+                <img src="img/img2.webp" alt="News 2">
+                <h3>Вебинар по онлайн-бизнесу</h3>
+                <p>Наши эксперты проведут бесплатный вебинар о старте и развитии онлайн-бизнеса в 2025 году.</p>
+            </div>
+            <div class="news-item">
+                <img src="img/img3.jpg" alt="News 3">
+                <h3>Конференция для предпринимателей</h3>
+                <p>Ассоциация Дордой проводит ежегодную конференцию, где обсуждаются последние тенденции в бизнесе.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ассоциация Дордой. Все права защищены.</p>
+            <ul>
+                <li><a href="#">Политика конфиденциальности</a></li>
+                <li><a href="#">Условия использования</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ассоциация Дордой - страница о нас">
+    <title>О нас - Ассоциация Дордой</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f1f8ff;
+            color: #333;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 20px 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+        }
+
+        #logo {
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        #logo:hover {
+            transform: scale(1.1);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            margin-right: 20px;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            text-transform: uppercase;
+            font-weight: bold;
+            position: relative;
+            transition: color 0.3s, padding 0.3s;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #ff6600;
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff6600;
+            padding-bottom: 5px;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            background: url('img/img4.webp') center/cover no-repeat;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 0 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin: 0;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-top: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            transform: translateY(50px);
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section h2 {
+            font-size: 36px;
+            color: #003366;
+            margin-bottom: 20px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: #ff6600;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+        }
+
+        .section p {
+            font-size: 20px;
+            color: #333;
+            line-height: 1.6;
+            margin-top: 20px;
+        }
+
+        .about-content {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+        }
+
+        .about-content > div {
+            width: 45%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(20px);
+            transition: transform 0.3s;
+        }
+
+        .about-content > div:hover {
+            transform: translateY(-10px);
+        }
+
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        footer ul li {
+            margin-left: 20px;
+        }
+
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        .partners-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.partner-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+    width: calc(33.33% - 20px);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.partner-card img {
+    width: 80%;
+    height: 200px;  /* Автоматически подгоняет высоту в зависимости от ширины */
+    object-fit: contain;  /* Сохраняет пропорции изображения, но оно будет вмещаться в контейнер */
+    max-width: 80%;  /* Убедитесь, что картинка не выходит за пределы контейнера */
+}
+
+.partner-card h4 {
+    font-size: 18px;
+    color: #003366;
+    margin: 10px 0;
+}
+
+.partner-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+.partner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.achievement-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    color: #003366;
+}
+
+.achievement-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.achievement-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.achievement-card p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.achievement-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.achievement-card:hover img {
+    transform: scale(1.1);
+}
+
+
+
+
+        footer ul li a:hover {
+            color: #ff6600;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="#" id="logo">Ассоциация Дордой</a>
+            <nav>
+                <ul><li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Добро пожаловать в Ассоциацию Дордой</h1>
+        <p></p>
+    </section>
+
+    <section id="about" class="section">
+        <h2>О нас</h2>
+        <p>Ассоциация "Дордой" — это объединение предпринимателей и бизнес-структур, нацеленное на развитие экономики и создание новых возможностей для наших членов.</p>
+
+        <div class="about-content">
+            <div class="mission">
+                <h3>Наша миссия</h3>
+                <p>Мы поддерживаем малый и средний бизнес, предоставляем инновационные решения и проводим мероприятия для развития наших участников.</p>
+            </div>
+
+            <div class="goals">
+                <h3>Наши цели</h3>
+                <ul>
+                    <li>Развитие и поддержка местного бизнеса.</li>
+                    <li>Организация обучающих мероприятий.</li>
+                    <li>Создание эффективной сети для взаимодействия предпринимателей.</li>
+                    <li>Повышение экономической стабильности региона.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="partners" class="section">
+        <h2>Наши Партнеры</h2>
+        <p>Ассоциация «Дордой» гордится сотрудничеством с рядом лидеров разных отраслей. Мы работаем с крупными компаниями и организациями, поддерживающими наш вклад в развитие местной экономики. Вот некоторые из наших ключевых партнеров:</p>
+    
+        <h3>Наши локальные партнеры:</h3>
+        <div class="partners-container"> <!-- Изменено на partners-container -->
+            <div class="partner-card">
+                <img src="img/img5.png" alt="Кыргызмебель">
+                <h4>ОАО «Кыргызмебель»</h4>
+                <p>Производитель мебели.</p>
+            </div>
+            <div class="partner-card">
+                <img src="img/img6.webp" alt="Ак-Таш Дордой">
+                <h4>ОсОО «Ак-Таш Дордой»</h4>
+                <p>Компания, специализирующаяся на различных услугах.</p>
+            </div>
+            <div class="partner-card">
+                <img src="img/img8.png" alt="Дордой-Секьюрити">
+                <h4>ОсОО «Дордой-Секьюрити»</h4>
+                <p>Охранно-детективное агентство.</p>
+            </div>
+            <div class="partner-card">
+                <img src="img/img9.png" alt="Дордой-Офтальмик Сервис">
+                <h4>Медицинский центр «Дордой-Офтальмик Сервис»</h4>
+                <p>Медицинские услуги.</p>
+            </div>
+            <div class="partner-card">
+                <img src="img/img10.webp" alt="Status Quo">
+                <h4>Юридическая компания «Status Quo»</h4>
+                <p>Юридические услуги.</p>
+            </div>
+        </div>
+    
+        <h3>Наши международные партнеры:</h3>
+        <div class="partners-container"> <!-- Изменено на partners-container -->
+            <div class="partner-card">
+                <img src="img/img11.webp" alt="VISA">
+                <h4>VISA</h4>
+                <p>Международная платежная система.</p>
+            </div>
+            <div class="partner-card">
+                <img src="img/img12.png" alt="New Market Technologies">
+                <h4>New Market Technologies</h4>
+                <p>Цифровая платформа для предпринимателей.</p>
+            </div>
+        </div>
+    
+        <h3>Дополнительные партнеры:</h3>
+        <div class="partners-container"> <!-- Изменено на partners-container -->
+            <div class="partner-card">
+                <img src="img/imgнет.webp" alt="ТОР Design group">
+                <h4>Архитектурно-дизайнерская студия «ТОР Design group»</h4>
+                <p>Архитектурные и дизайнерские услуги.</p>
+            </div>
+            <div class="partner-card">
+                <img src="img/imgнет.webp" alt="Кошой-Коргон">
+                <h4>Археологическо-этнографический исторический музей «Кошой-Коргон»</h4>
+                <p>Культурные мероприятия.</p>
+            </div>
+            <div class="partner-card">
+                <img src="img/imgнет.webp" alt="Дордой-Моторс">
+                <h4>Дордой-Моторс</h4>
+                <p>Автомобильные услуги.</p>
+            </div>
+        </div>
+    
+        <p>Мы продолжаем расширять нашу сеть партнеров и стремимся к укреплению торгово-экономических связей с организациями и государственными структурами различных стран, включая Китай, Турцию, Венгрию, Финляндию, Швейцарию, Германию и США.</p>
+    </section>
+    
+    
+    
+    <section id="awards" class="section">
+        <h2>Наши Достижения</h2>
+        <p>Мы гордимся тем, что наша ассоциация достигла значимых результатов. Вот некоторые из них:</p>
+        <div class="achievements-grid">
+            <div class="achievement-card">
+
+                <h3>Лауреат премии "Лучший предпринимательский союз года" (2018)</h3>
+                <p>Признание за достижения в развитии местного предпринимательства.</p>
+            </div>
+            <div class="achievement-card">
+                <h3>Победитель в номинации "Лучший бизнес-инкубатор региона" (2020)</h3>
+                <p>Награда за создание успешной экосистемы для стартапов и малого бизнеса.</p>
+            </div>
+            <div class="achievement-card">
+                <h3>Организатор более 50 успешных бизнес-мероприятий</h3>
+                <p>Постоянное проведение бизнес-конференций, мастер-классов и семинаров.</p>
+            </div>
+            <div class="achievement-card">
+                <h3>Награда "Лучшее партнерство с государственными структурами" (2023)</h3>
+                <p>За активное сотрудничество с государственными органами для улучшения бизнес-климата.</p>
+            </div>
+            <div class="achievement-card">
+                <h3>Достижение в сфере экономического вклада в регион</h3>
+                <p>Ассоциация сделала значительный вклад в развитие местной экономики.</p>
+            </div>
+            <div class="achievement-card">
+                <h3>Признание за инновации в бизнес-решениях (2024)</h3>
+                <p>Внедрение новых технологий и методов для упрощения ведения бизнеса.</p>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <footer>
+        <p>&copy; 2025 Ассоциация Дордой. Все права защищены.</p>
+        <ul>
+            <li><a href="#">Политика конфиденциальности</a></li>
+            <li><a href="#">Условия использования</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        // Плавная прокрутка по якорям
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Анимация блоков при прокрутке страницы
+        const sections = document.querySelectorAll('.section');
+
+        const checkVisibility = () => {
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const sectionVisible = window.innerHeight / 1.5;
+
+                if (sectionTop < sectionVisible) {
+                    section.classList.add('visible');
+                } else {
+                    section.classList.remove('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', checkVisibility);
+        checkVisibility();  // Для инициализации сразу при загрузке
+    </script>
+</body>
+</html>
